@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
 
 class Region {
   final String loc;
@@ -16,4 +18,31 @@ class Region {
     @required this.deaths,
     @required this.totalConfirmed,
   });
+
+  static List<Region> regionalDataList = [];
+
+  static Future<Region> getRegionalData() async {
+    var url = Uri.https(
+        'api.rootnet.in', '/covid19-in/stats/latest', {'q': '{http}'});
+    var response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      final decodedData = convert.jsonDecode(response.body);
+      final regionalData = decodedData['data']['regional'];
+      regionalData.forEach((region) => {
+            regionalDataList.add(
+              Region(
+                loc: region['loc'],
+                confirmedCasesIndian: region['confirmedCasesIndian'],
+                confirmedCasesForeign: region['confirmedCasesForeign'],
+                discharged: region['discharged'],
+                deaths: region['deaths'],
+                totalConfirmed: region['totalConfirmed'],
+              ),
+            )
+          });
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
 }
