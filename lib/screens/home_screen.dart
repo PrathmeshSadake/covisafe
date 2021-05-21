@@ -12,15 +12,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Summary covidSummary;
   bool isLoading = false;
   loadSummaryData() async {
-    setState(() {
-      isLoading = true;
-    });
-    // covidSummary = await Summary.getSummaryData();
-    // await Region.getRegionalData();
-    await News.getNewsData();
-    setState(() {
-      isLoading = false;
-    });
+    // setState(() {
+    //   isLoading = true;
+    // });
+    // // covidSummary = await Summary.getSummaryData();
+    // // await Region.getRegionalData();
+    // await News.getNewsData();
+    // setState(() {
+    //   isLoading = false;
+    // });
   }
 
   @override

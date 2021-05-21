@@ -1,4 +1,4 @@
-import 'package:covisafe/utils/formatString.dart';
+import 'package:covisafe/utils/format_string.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
