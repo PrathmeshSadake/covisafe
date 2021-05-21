@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import './screens/home_screen.dart';
 import './widgets/custom_drawer.dart';
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Covisafe - Corona Virus Tracker',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: GoogleFonts.nunito().fontFamily,
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text(

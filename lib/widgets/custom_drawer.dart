@@ -2,6 +2,7 @@ import 'package:covisafe/screens/contact_screen.dart';
 import 'package:covisafe/screens/home_screen.dart';
 import 'package:covisafe/screens/hospitals_screen.dart';
 import 'package:covisafe/screens/news_screen.dart';
+import 'package:covisafe/utils/url_launcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,19 +13,6 @@ class CustomDrawer extends StatefulWidget {
 }
 
 class _CustomDrawerState extends State<CustomDrawer> {
-  Future<void> _launched;
-  Future<void> _launchInBrowser(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-        forceSafariVC: false,
-        forceWebView: false,
-      );
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     const String toLaunch = 'https://www.covid19india.org/';
@@ -165,9 +153,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               ),
             ),
             InkWell(
-              onTap: () => setState(() {
-                _launched = _launchInBrowser(toLaunch);
-              }),
+              onTap: () => UrlLauncher.launchInBrowser(toLaunch),
               child: ListTile(
                 leading: Icon(
                   CupertinoIcons.link,
