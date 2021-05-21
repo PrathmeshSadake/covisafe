@@ -31,6 +31,7 @@ dependencies:
   charts_flutter: ^0.10.0
   http: ^0.13.3
   intl: ^0.17.0
+  google_fonts: ^2.1.0
 
 dev_dependencies:
   flutter_test:
