@@ -1,6 +1,7 @@
 import 'package:covisafe/models/news.dart';
 // import 'package:covisafe/models/region.dart';
 import 'package:covisafe/models/summary.dart';
+import 'package:covisafe/models/world.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // setState(() {
     //   isLoading = true;
     // });
+    await World.getWorldData();
     // // covidSummary = await Summary.getSummaryData();
     // // await Region.getRegionalData();
     // await News.getNewsData();

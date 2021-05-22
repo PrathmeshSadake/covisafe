@@ -1,6 +1,7 @@
 import 'package:covisafe/screens/contact_screen.dart';
 import 'package:covisafe/screens/home_screen.dart';
 import 'package:covisafe/screens/hospitals_screen.dart';
+import 'package:covisafe/screens/indian_stats_screen.dart';
 import 'package:covisafe/screens/news_screen.dart';
 import 'package:covisafe/utils/url_launcher.dart';
 import 'package:flutter/cupertino.dart';
@@ -40,8 +41,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => HomeScreen()));
               },
               child: ListTile(
                 leading: Icon(
@@ -63,8 +64,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => IndianStats(),
+                  ),
+                );
               },
               child: ListTile(
                 leading: Icon(

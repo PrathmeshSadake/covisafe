@@ -1,3 +1,4 @@
+import 'package:covisafe/utils/date_formatter.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
@@ -20,8 +21,9 @@ class Region {
   });
 
   static List<Region> regionalDataList = [];
+  static dynamic lastOriginUpdate;
 
-  static Future<Region> getRegionalData() async {
+  static Future<List<Region>> getRegionalData() async {
     var url = Uri.https(
         'api.rootnet.in', '/covid19-in/stats/latest', {'q': '{http}'});
     var response = await http.get(url);
@@ -29,6 +31,8 @@ class Region {
     if (response.statusCode == 200) {
       final decodedData = convert.jsonDecode(response.body);
       final regionalData = decodedData['data']['regional'];
+      lastOriginUpdate =
+          DateFormatter.formatter(decodedData['lastOriginUpdate']);
       regionalData.forEach((region) => {
             regionalDataList.add(
               Region(
@@ -44,5 +48,6 @@ class Region {
     } else {
       print('Request failed with status: ${response.statusCode}.');
     }
+    return regionalDataList;
   }
 }

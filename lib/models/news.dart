@@ -58,7 +58,6 @@ class News {
   static Future<List<News>> getNewsData() async {
     await changeUrl('coronavirus');
     await changeUrl('covid');
-    print(newsList.length);
     return newsList;
   }
 }
