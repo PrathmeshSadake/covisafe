@@ -24,20 +24,31 @@ class _IndianStatsState extends State<IndianStats> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Text(
+          'Indian Regions',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
       body: regionalData.isEmpty || regionalData == null
           ? Center(
               child: CircularProgressIndicator(),
             )
-          : Stack(
+          : Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
+                  color: Colors.transparent,
                   child: Text(
                       'Last updated on: ${Region.lastOriginUpdate.toString()}'),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 50),
+                Expanded(
+                  // margin: EdgeInsets.only(top: 50),
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemBuilder: (ctx, index) =>

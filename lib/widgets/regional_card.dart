@@ -8,14 +8,17 @@ class RegionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: 12,
+      ),
       decoration: BoxDecoration(
         // border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10.0),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.3), //color of shadow
+            color: Colors.grey.withOpacity(0.1), //color of shadow
             spreadRadius: 2, //spread radius
             blurRadius: 10, // blur radius
             offset: Offset(0, 1), // changes position of shadow

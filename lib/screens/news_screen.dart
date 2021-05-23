@@ -44,6 +44,12 @@ class _NewsScreenState extends State<NewsScreen> {
               letterSpacing: 1,
             ),
           ),
+          // actions: [
+          //   Padding(
+          //     padding: const EdgeInsets.only(right: 14.0),
+          //     child: Icon(Icons.home),
+          //   )
+          // ],
         ),
         body: isLoading || news.isEmpty
             ? Center(

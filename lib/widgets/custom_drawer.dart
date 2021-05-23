@@ -1,12 +1,8 @@
-import 'package:covisafe/screens/contact_screen.dart';
-import 'package:covisafe/screens/home_screen.dart';
-import 'package:covisafe/screens/hospitals_screen.dart';
 import 'package:covisafe/screens/indian_stats_screen.dart';
 import 'package:covisafe/screens/news_screen.dart';
 import 'package:covisafe/utils/url_launcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class CustomDrawer extends StatefulWidget {
   @override
@@ -14,6 +10,7 @@ class CustomDrawer extends StatefulWidget {
 }
 
 class _CustomDrawerState extends State<CustomDrawer> {
+  
   @override
   Widget build(BuildContext context) {
     const String toLaunch = 'https://www.covid19india.org/';
@@ -111,52 +108,29 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 ),
               ),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HospitalsScreen()));
-              },
-              child: ListTile(
-                leading: Icon(
-                  CupertinoIcons.bed_double_fill,
-                  color: Colors.white,
-                ),
-                horizontalTitleGap: 1.0,
-                title: Text(
-                  'Hospitals & beds',
-                  textScaleFactor: 1.1,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.5,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ContactScreen()));
-              },
-              child: ListTile(
-                leading: Icon(
-                  CupertinoIcons.phone,
-                  color: Colors.white,
-                ),
-                horizontalTitleGap: 1.0,
-                title: Text(
-                  'Contact & helpline',
-                  textScaleFactor: 1.1,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.5,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
+            // InkWell(
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //     Navigator.push(context,
+            //         MaterialPageRoute(builder: (context) => ContactScreen()));
+            //   },
+            //   child: ListTile(
+            //     leading: Icon(
+            //       CupertinoIcons.phone,
+            //       color: Colors.white,
+            //     ),
+            //     horizontalTitleGap: 1.0,
+            //     title: Text(
+            //       'Contact & helpline',
+            //       textScaleFactor: 1.1,
+            //       style: TextStyle(
+            //         fontWeight: FontWeight.w600,
+            //         letterSpacing: 0.5,
+            //         color: Colors.white,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             InkWell(
               onTap: () => UrlLauncher.launchInBrowser(toLaunch),
               child: ListTile(
