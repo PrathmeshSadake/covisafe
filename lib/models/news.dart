@@ -28,8 +28,8 @@ addResponseToList(var response) {
 }
 
 changeUrl(String keyword) async {
-  var url = Uri.parse(
-      'https://newsapi.org/v2/everything?q=coronavirus&apiKey=$API_KEY');
+  var url =
+      Uri.parse('https://newsapi.org/v2/everything?q=$keyword&apiKey=$API_KEY');
   var response = await http.get(url);
   addResponseToList(response);
 }
@@ -56,8 +56,8 @@ class News {
   static List<News> newsList = [];
 
   static Future<List<News>> getNewsData() async {
-    await changeUrl('coronavirus');
     await changeUrl('covid');
+    await changeUrl('coronavirus');
     return newsList;
   }
 }

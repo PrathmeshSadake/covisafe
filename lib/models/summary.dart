@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 
-class Summary extends ChangeNotifier {
+class Summary {
   final num total;
   final num confirmedCasesIndian;
   final num confirmedCasesForeign;
@@ -27,6 +27,7 @@ class Summary extends ChangeNotifier {
     if (response.statusCode == 200) {
       final decodedData = convert.jsonDecode(response.body);
       final summaryData = decodedData['data']['summary'];
+      print(summaryData);
       Summary covidSummary = Summary(
         total: summaryData['total'],
         confirmedCasesIndian: summaryData['confirmedCasesIndian'],
