@@ -32,6 +32,7 @@ dependencies:
   http: ^0.13.3
   intl: ^0.17.0
   google_fonts: ^2.1.0
+  string_validator: ^0.3.0
 
 dev_dependencies:
   flutter_test:
