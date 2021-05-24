@@ -52,27 +52,27 @@ class NewsCard extends StatelessWidget {
                   children: [
                     Text(
                       newsItem.title,
-                      style: Styles.newsTitle,
+                      style: Styles.heading,
                     ),
                     Text(
                       newsItem.description,
-                      style: Styles.newsDesc,
+                      style: Styles.title,
                     ),
-                    Text(
-                      StringFormatter.formattedString(
-                        newsItem.content,
-                      ),
-                      style: Styles.newsContent,
-                    ),
+                    // Text(
+                    //   StringFormatter.formattedString(
+                    //     newsItem.content,
+                    //   ),
+                    //   style: Styles.content,
+                    // ),
                     Text(
                       newsItem.source,
-                      style: Styles.newsDateSrc,
+                      style: Styles.dateAndSrc,
                     ),
                     Text(
                       DateFormatter.formatter(
                         newsItem.publishedAt,
                       ),
-                      style: Styles.newsDateSrc,
+                      style: Styles.dateAndSrc,
                     ),
                   ],
                 ),

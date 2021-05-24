@@ -30,8 +30,8 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
 
   _setInput(value) {
     setState(() {
-      searchCountryCovidData = [];
       searchField = value;
+      searchCountryCovidData = [];
       addSearchedDataToList();
     });
   }
@@ -59,7 +59,7 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
             letterSpacing: 1,
           ),
         ),
-        actions: [Icon(Icons.home)],
+        // actions: [Icon(Icons.home)],
       ),
       body: SafeArea(
         child: Container(

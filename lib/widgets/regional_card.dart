@@ -1,4 +1,5 @@
 import 'package:covisafe/models/region.dart';
+import 'package:covisafe/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class RegionCard extends StatelessWidget {
@@ -36,14 +37,78 @@ class RegionCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Location: ${region.loc}'),
-            Text(
-                'Confirmed Indian cases in India: ${region.confirmedCasesIndian.toString()}'),
-            Text(
-                'Confirmed foreign cases in India: ${region.confirmedCasesForeign.toString()}'),
-            Text('Total confirmed cases: ${region.totalConfirmed.toString()}'),
-            Text('Patients Discharged: ${region.discharged.toString()}'),
-            Text('Total Deaths: ${region.deaths.toString()}'),
+            RichText(
+              text: TextSpan(
+                text: 'Location: ',
+                style: Styles.title2,
+                children: [
+                  TextSpan(
+                    text: region.loc,
+                    style: Styles.content,
+                  ),
+                ],
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                text: 'Confirmed Indian cases in India: ',
+                style: Styles.title2,
+                children: [
+                  TextSpan(
+                    text: region.confirmedCasesIndian.toString(),
+                    style: Styles.content,
+                  ),
+                ],
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                text: 'Confirmed foreign cases in India: ',
+                style: Styles.title2,
+                children: [
+                  TextSpan(
+                    text: region.confirmedCasesForeign.toString(),
+                    style: Styles.content,
+                  ),
+                ],
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                text: 'Total confirmed cases: ',
+                style: Styles.title2,
+                children: [
+                  TextSpan(
+                    text: region.totalConfirmed.toString(),
+                    style: Styles.content,
+                  ),
+                ],
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                text: 'Patients Discharged: ',
+                style: Styles.title2,
+                children: [
+                  TextSpan(
+                    text: region.discharged.toString(),
+                    style: Styles.content,
+                  ),
+                ],
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                text: 'Total Deaths: ',
+                style: Styles.title2,
+                children: [
+                  TextSpan(
+                    text: region.deaths.toString(),
+                    style: Styles.content,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

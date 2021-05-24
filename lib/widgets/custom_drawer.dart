@@ -10,7 +10,6 @@ class CustomDrawer extends StatefulWidget {
 }
 
 class _CustomDrawerState extends State<CustomDrawer> {
-  
   @override
   Widget build(BuildContext context) {
     const String toLaunch = 'https://www.covid19india.org/';
@@ -131,6 +130,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             //     ),
             //   ),
             // ),
+
             InkWell(
               onTap: () => UrlLauncher.launchInBrowser(toLaunch),
               child: ListTile(
@@ -139,6 +139,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   color: Colors.indigo[900],
                 ),
                 horizontalTitleGap: 1.0,
+                trailing: Icon(
+                  CupertinoIcons.arrow_up_right,
+                  color: Colors.indigo[900],
+                ),
                 title: Text(
                   'covid19india.org',
                   textScaleFactor: 1.1,
