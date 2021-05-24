@@ -51,9 +51,28 @@ class _HomeScreenState extends State<HomeScreen> {
             ? Center(
                 child: CircularProgressIndicator(),
               )
-            : HomeScreenPieChart(
-                seriesList: _createSampleData(),
-                animate: true,
+            : Container(
+                padding: EdgeInsets.all(14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Card(
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                        child: Text(
+                          'Total Cases in India🇮🇳 ${total.toString()}',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      child: HomeScreenPieChart(
+                        seriesList: _createSampleData(),
+                        animate: true,
+                      ),
+                    ),
+                  ],
+                ),
               ));
   }
 
