@@ -1,6 +1,10 @@
 // import 'package:covisafe/models/region.dart';
+import 'package:covisafe/models/pie_chart_stats.dart';
 import 'package:covisafe/models/summary.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:covisafe/utils/styles.dart';
+import 'package:covisafe/widgets/legend.dart';
+import 'package:covisafe/widgets/legends_container.dart';
 import 'package:covisafe/widgets/pie_chart.dart';
 
 import 'package:flutter/material.dart';
@@ -47,31 +51,38 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        // backgroundColor: Colors.white,
         body: isLoading
             ? Center(
                 child: CircularProgressIndicator(),
               )
             : Container(
                 padding: EdgeInsets.all(14),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Card(
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                        child: Text(
-                          'Total Cases in India🇮🇳 ${total.toString()}',
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Card(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 10),
+                          child: Text(
+                            'Total Cases in India: $total',
+                            style: Styles.heading,
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      child: HomeScreenPieChart(
-                        seriesList: _createSampleData(),
-                        animate: true,
+                      Container(
+                        child: HomeScreenPieChart(
+                          seriesList: _createSampleData(),
+                          animate: true,
+                        ),
                       ),
-                    ),
-                  ],
+                      LegendsContainer(
+                        covidSummary: covidSummary,
+                      ),
+                    ],
+                  ),
                 ),
               ));
   }
@@ -80,13 +91,13 @@ class _HomeScreenState extends State<HomeScreen> {
     final data = [
       // new PieStats('Total', total),
       new PieStats(
-          'Confirmed Indians', confirmedCasesIndian, Color(0xFF000023)),
+          'Confirmed Indians', confirmedCasesIndian, Color(0xFF6050DC)),
       new PieStats(
-          'Confirmed Foreigners', confirmedCasesForeign, Color(0xFFFF0000)),
-      new PieStats('Discharged', discharged, Color(0xFF00FFFF)),
-      new PieStats('Deaths', deaths, Color(0xFF003143)),
-      // new PieStats('Confirmed But Location Unidentified',
-      //     confirmedButLocationUnidentified),
+          'Confirmed Foreigners', confirmedCasesForeign, Color(0xFFD52DB7)),
+      new PieStats('Discharged', discharged, Color(0xFFFF2E7E)),
+      new PieStats('Deaths', deaths, Color(0xFFFF6B45)),
+      new PieStats('Confirmed But Location Unidentified',
+          confirmedButLocationUnidentified, Color(0xFFFFAB05)),
     ];
 
     return [
@@ -101,12 +112,4 @@ class _HomeScreenState extends State<HomeScreen> {
       )
     ];
   }
-}
-
-class PieStats {
-  final String title;
-  final num count;
-  final Color color;
-
-  PieStats(this.title, this.count, this.color);
 }

@@ -13,11 +13,13 @@ class HomeScreenPieChart extends StatelessWidget {
       child: charts.PieChart(
         seriesList,
         animate: animate,
-      
-        defaultRenderer: new charts.ArcRendererConfig(arcRendererDecorators: [
-          new charts.ArcLabelDecorator(
-              labelPosition: charts.ArcLabelPosition.auto)
-        ]),
+        defaultRenderer: new charts.ArcRendererConfig(
+          arcRendererDecorators: [
+            new charts.ArcLabelDecorator(
+                // labelPosition: charts.ArcLabelPosition.auto
+                ),
+          ],
+        ),
       ),
     );
   }
