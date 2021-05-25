@@ -6,9 +6,14 @@ class Styles {
     fontWeight: FontWeight.bold,
     color: Colors.grey,
   );
+  static const TextStyle homeHeading = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
   static const TextStyle title = TextStyle(
     fontSize: 17,
-    fontWeight: FontWeight.w800,
+    fontWeight: FontWeight.w600,
     color: Colors.black,
   );
   static const TextStyle title2 = TextStyle(
@@ -20,6 +25,11 @@ class Styles {
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: Colors.black87,
+  );
+  static const TextStyle regionLabel = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: Color(0xFF6050DC),
   );
 
   static const TextStyle dateAndSrc = TextStyle(

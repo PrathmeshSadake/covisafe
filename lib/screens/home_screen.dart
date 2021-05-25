@@ -8,6 +8,7 @@ import 'package:covisafe/widgets/pie_chart.dart';
 import 'package:covisafe/widgets/prevention_data.dart';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -25,6 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
   num discharged;
   num deaths;
   num confirmedButLocationUnidentified;
+
+  final formatter = new NumberFormat("#,###");
 
   loadSummaryData() async {
     setState(() {
@@ -64,15 +67,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Card(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 15, horizontal: 10),
-                          child: Text(
-                            'Total Cases in India: $total',
-                            style: Styles.heading,
-                          ),
-                        ),
+                      Text(
+                        'Total cases in India: ${formatter.format(total)}',
+                        style: Styles.title,
                       ),
                       Container(
                         child: HomeScreenPieChart(

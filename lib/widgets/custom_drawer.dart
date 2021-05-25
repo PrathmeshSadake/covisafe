@@ -15,14 +15,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
     const String toLaunch = 'https://www.covid19india.org/';
     return Drawer(
       child: Container(
-        color: Colors.amber,
+        color: Color(0xFF6050DC),
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color: Colors.amber),
+                decoration: BoxDecoration(color: Color(0xFF6050DC)),
                 margin: EdgeInsets.zero,
                 accountName: Text('Prathmesh Sadake'),
                 accountEmail: Text('prathmeshsadake@gmail.com'),
@@ -136,12 +136,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
               child: ListTile(
                 leading: Icon(
                   CupertinoIcons.link,
-                  color: Colors.indigo[900],
+                  color: Color(0xFFFFAB05),
                 ),
                 horizontalTitleGap: 1.0,
                 trailing: Icon(
                   CupertinoIcons.arrow_up_right,
-                  color: Colors.indigo[900],
+                  color: Color(0xFFFFAB05),
                 ),
                 title: Text(
                   'covid19india.org',
@@ -149,7 +149,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     letterSpacing: 0.5,
-                    color: Colors.indigo[900],
+                    color: Color(0xFFFFAB05),
                   ),
                 ),
               ),

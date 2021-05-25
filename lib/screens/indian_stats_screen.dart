@@ -31,7 +31,7 @@ class _IndianStatsState extends State<IndianStats> {
         title: Text(
           'Indian Regions',
           style: TextStyle(
-            color: Colors.black,
+            color: Color(0xFFFF2E7E),
           ),
         ),
       ),

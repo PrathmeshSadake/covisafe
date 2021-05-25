@@ -31,7 +31,7 @@ class RegionCard extends StatelessWidget {
       ),
       child: Container(
         padding: EdgeInsets.symmetric(
-          vertical: 8,
+          vertical: 10,
           horizontal: 12,
         ),
         child: Column(
@@ -40,11 +40,11 @@ class RegionCard extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: 'Location: ',
-                style: Styles.title2,
+                style: Styles.title,
                 children: [
                   TextSpan(
                     text: region.loc,
-                    style: Styles.content,
+                    style: Styles.regionLabel,
                   ),
                 ],
               ),
@@ -52,11 +52,11 @@ class RegionCard extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: 'Confirmed Indian cases in India: ',
-                style: Styles.title2,
+                style: Styles.title,
                 children: [
                   TextSpan(
                     text: region.confirmedCasesIndian.toString(),
-                    style: Styles.content,
+                    style: Styles.regionLabel,
                   ),
                 ],
               ),
@@ -64,11 +64,11 @@ class RegionCard extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: 'Confirmed foreign cases in India: ',
-                style: Styles.title2,
+                style: Styles.title,
                 children: [
                   TextSpan(
                     text: region.confirmedCasesForeign.toString(),
-                    style: Styles.content,
+                    style: Styles.regionLabel,
                   ),
                 ],
               ),
@@ -76,11 +76,11 @@ class RegionCard extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: 'Total confirmed cases: ',
-                style: Styles.title2,
+                style: Styles.title,
                 children: [
                   TextSpan(
                     text: region.totalConfirmed.toString(),
-                    style: Styles.content,
+                    style: Styles.regionLabel,
                   ),
                 ],
               ),
@@ -88,11 +88,11 @@ class RegionCard extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: 'Patients Discharged: ',
-                style: Styles.title2,
+                style: Styles.title,
                 children: [
                   TextSpan(
                     text: region.discharged.toString(),
-                    style: Styles.content,
+                    style: Styles.regionLabel,
                   ),
                 ],
               ),
@@ -100,11 +100,11 @@ class RegionCard extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: 'Total Deaths: ',
-                style: Styles.title2,
+                style: Styles.title,
                 children: [
                   TextSpan(
                     text: region.deaths.toString(),
-                    style: Styles.content,
+                    style: Styles.regionLabel,
                   ),
                 ],
               ),
