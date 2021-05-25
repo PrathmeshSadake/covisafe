@@ -1,11 +1,11 @@
-// import 'package:covisafe/models/region.dart';
 import 'package:covisafe/models/pie_chart_stats.dart';
+import 'package:covisafe/models/prevention.dart';
 import 'package:covisafe/models/summary.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:covisafe/utils/styles.dart';
-import 'package:covisafe/widgets/legend.dart';
 import 'package:covisafe/widgets/legends_container.dart';
 import 'package:covisafe/widgets/pie_chart.dart';
+import 'package:covisafe/widgets/prevention_data.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Summary covidSummary;
+  List<Prevention> preventionData = [];
   bool isLoading = false;
 
   num total;
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       isLoading = true;
     });
     covidSummary = await Summary.getSummaryData();
+    preventionData = await Prevention.getPreventionData();
     total = covidSummary.total;
     confirmedCasesIndian = covidSummary.confirmedCasesIndian;
     confirmedCasesForeign = covidSummary.confirmedCasesForeign;
@@ -56,9 +58,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ? Center(
                 child: CircularProgressIndicator(),
               )
-            : Container(
-                padding: EdgeInsets.all(14),
-                child: SingleChildScrollView(
+            : SingleChildScrollView(
+                child: Container(
+                  padding: EdgeInsets.all(14),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -81,6 +83,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       LegendsContainer(
                         covidSummary: covidSummary,
                       ),
+                      PreventionData(
+                        preventionData: preventionData,
+                      )
                     ],
                   ),
                 ),
