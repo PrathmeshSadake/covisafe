@@ -138,11 +138,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   CupertinoIcons.link,
                   color: Color(0xFFFFAB05),
                 ),
-                horizontalTitleGap: 1.0,
-                trailing: Icon(
-                  CupertinoIcons.arrow_up_right,
-                  color: Color(0xFFFFAB05),
-                ),
+                horizontalTitleGap: 0.2,
                 title: Text(
                   'covid19india.org',
                   textScaleFactor: 1.1,
