@@ -13,6 +13,9 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
   List<World> searchCountryCovidData = [];
 
   loadSummaryData() async {
+    setState(() {
+      worldCovidData = [];
+    });
     worldCovidData = await World.getWorldData();
     setState(() {});
   }
@@ -29,9 +32,10 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
   }
 
   _setInput(value) {
+    searchCountryCovidData = [];
     setState(() {
-      searchField = value;
       searchCountryCovidData = [];
+      searchField = value;
       addSearchedDataToList();
     });
   }
@@ -59,7 +63,6 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
             letterSpacing: 1,
           ),
         ),
-        // actions: [Icon(Icons.home)],
       ),
       body: SafeArea(
         child: Container(
