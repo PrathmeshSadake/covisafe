@@ -1,6 +1,8 @@
-import 'package:covisafe/models/region.dart';
-import 'package:covisafe/widgets/regional_card.dart';
 import 'package:flutter/material.dart';
+// Models
+import '../models/region.dart';
+// Widgets
+import '../widgets/regional_card.dart';
 
 class IndianStats extends StatefulWidget {
   @override

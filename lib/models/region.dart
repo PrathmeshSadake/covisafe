@@ -1,7 +1,9 @@
-import 'package:covisafe/utils/date_formatter.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
+
+// Utils
+import '../utils/date_formatter.dart';
 
 class Region {
   final String loc;

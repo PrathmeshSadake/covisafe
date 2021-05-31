@@ -1,9 +1,10 @@
-import 'package:covisafe/utils/date_formatter.dart';
 import 'package:flutter/material.dart';
+import 'package:string_validator/string_validator.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
-import 'package:string_validator/string_validator.dart';
+// Utils
+import 'package:covisafe/utils/date_formatter.dart';
 
 class World {
   final dynamic name;

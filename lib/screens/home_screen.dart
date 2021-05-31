@@ -1,14 +1,17 @@
-import 'package:covisafe/models/pie_chart_stats.dart';
-import 'package:covisafe/models/prevention.dart';
-import 'package:covisafe/models/summary.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:covisafe/utils/styles.dart';
-import 'package:covisafe/widgets/legends_container.dart';
-import 'package:covisafe/widgets/pie_chart.dart';
-import 'package:covisafe/widgets/prevention_data.dart';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
+
+// Models
+import '../models/pie_chart_stats.dart';
+import '../models/prevention.dart';
+import '../models/summary.dart';
+// Utils
+import '../utils/styles.dart';
+// Widgets
+import '../widgets/legends_container.dart';
+import '../widgets/pie_chart.dart';
+import '../widgets/prevention_data.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -56,7 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // backgroundColor: Colors.white,
         body: isLoading
             ? Center(
                 child: CircularProgressIndicator(),
@@ -91,7 +93,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<charts.Series<PieStats, String>> _createSampleData() {
     final data = [
-      // new PieStats('Total', total),
       new PieStats(
           'Confirmed Indians', confirmedCasesIndian, Color(0xFF6050DC)),
       new PieStats(

@@ -1,7 +1,10 @@
-import 'package:covisafe/models/world.dart';
-import 'package:covisafe/widgets/country_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Models
+import '../models/world.dart';
+// Widgets
+import '../widgets/country_data.dart';
 
 class WorldStatsScreen extends StatefulWidget {
   @override
@@ -50,6 +53,7 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

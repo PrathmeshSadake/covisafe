@@ -1,6 +1,9 @@
-import 'package:covisafe/models/news.dart';
-import 'package:covisafe/widgets/news_card.dart';
 import 'package:flutter/material.dart';
+
+// Models
+import '../models/news.dart';
+// Widgets
+import '../widgets/news_card.dart';
 
 class NewsScreen extends StatefulWidget {
   @override
@@ -32,38 +35,33 @@ class _NewsScreenState extends State<NewsScreen> {
   Widget build(BuildContext context) {
     print(news.length);
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          iconTheme: IconThemeData(color: Colors.black),
-          title: Text(
-            'Coronavirus News',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 1,
-            ),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Text(
+          'Coronavirus News',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w900,
+            letterSpacing: 1,
           ),
-          // actions: [
-          //   Padding(
-          //     padding: const EdgeInsets.only(right: 14.0),
-          //     child: Icon(Icons.home),
-          //   )
-          // ],
         ),
-        body: isLoading || news.isEmpty
-            ? Center(
-                child: CircularProgressIndicator(),
-              )
-            : SafeArea(
-                child: Container(
-                  child: ListView.builder(
-                    itemBuilder: (ctx, index) => NewsCard(
-                      newsItem: news[index],
-                    ),
-                    itemCount: news.length,
+      ),
+      body: isLoading || news.isEmpty
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : SafeArea(
+              child: Container(
+                child: ListView.builder(
+                  itemBuilder: (ctx, index) => NewsCard(
+                    newsItem: news[index],
                   ),
+                  itemCount: news.length,
                 ),
-              ));
+              ),
+            ),
+    );
   }
 }

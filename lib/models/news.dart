@@ -1,7 +1,9 @@
-import 'package:covisafe/utils/format_string.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
+
+// Utils
+import '../utils/format_string.dart';
 
 const String API_KEY = 'bca60ca4665a42e3b01d791bca670476';
 

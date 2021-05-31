@@ -1,9 +1,11 @@
-import 'package:covisafe/screens/world_stats_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Screens
 import './screens/home_screen.dart';
+import './screens/world_stats_screen.dart';
+// Widgets
 import './widgets/custom_drawer.dart';
 
 void main() => runApp(MyApp());
@@ -23,9 +25,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHome extends StatelessWidget {
-  const MyHome({
-    Key key,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
