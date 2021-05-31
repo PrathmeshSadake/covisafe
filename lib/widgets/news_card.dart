@@ -1,9 +1,11 @@
-import 'package:covisafe/models/news.dart';
-import 'package:covisafe/utils/date_formatter.dart';
-import 'package:covisafe/utils/format_string.dart';
-import 'package:covisafe/utils/styles.dart';
-import 'package:covisafe/utils/url_launcher.dart';
 import 'package:flutter/material.dart';
+
+// Models
+import '../models/news.dart';
+// Utils
+import '../utils/date_formatter.dart';
+import '../utils/styles.dart';
+import '../utils/url_launcher.dart';
 
 class NewsCard extends StatelessWidget {
   final News newsItem;

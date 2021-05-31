@@ -1,6 +1,8 @@
-import 'package:covisafe/models/region.dart';
-import 'package:covisafe/utils/styles.dart';
 import 'package:flutter/material.dart';
+// Models
+import '../models/region.dart';
+// Utils
+import '../utils/styles.dart';
 
 class RegionCard extends StatelessWidget {
   final Region region;

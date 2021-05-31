@@ -1,7 +1,10 @@
-import 'package:covisafe/models/prevention.dart';
-import 'package:covisafe/utils/styles.dart';
-import 'package:covisafe/widgets/prevention_card.dart';
 import 'package:flutter/material.dart';
+// Models
+import '../models/prevention.dart';
+// Utils
+import '../utils/styles.dart';
+// Widgets
+import '../widgets/prevention_card.dart';
 
 class PreventionData extends StatefulWidget {
   final List<Prevention> preventionData;

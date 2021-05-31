@@ -16,8 +16,8 @@ class HomeScreenPieChart extends StatelessWidget {
         defaultRenderer: new charts.ArcRendererConfig(
           arcRendererDecorators: [
             new charts.ArcLabelDecorator(
-                // labelPosition: charts.ArcLabelPosition.auto
-                ),
+              labelPosition: charts.ArcLabelPosition.auto,
+            ),
           ],
         ),
       ),

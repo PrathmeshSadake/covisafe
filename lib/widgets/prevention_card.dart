@@ -1,6 +1,8 @@
-import 'package:covisafe/models/prevention.dart';
-import 'package:covisafe/utils/styles.dart';
 import 'package:flutter/material.dart';
+// Models
+import '../models/prevention.dart';
+// Utils
+import '../utils/styles.dart';
 
 class PreventionCard extends StatelessWidget {
   final Prevention data;

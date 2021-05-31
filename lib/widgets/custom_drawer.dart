@@ -1,8 +1,11 @@
-import 'package:covisafe/screens/indian_stats_screen.dart';
-import 'package:covisafe/screens/news_screen.dart';
-import 'package:covisafe/utils/url_launcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Screens
+import '../screens/indian_stats_screen.dart';
+import '../screens/news_screen.dart';
+// Utils
+import '../utils/url_launcher.dart';
 
 class CustomDrawer extends StatefulWidget {
   @override
@@ -37,8 +40,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => HomeScreen()));
               },
               child: ListTile(
                 leading: Icon(
@@ -107,30 +108,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 ),
               ),
             ),
-            // InkWell(
-            //   onTap: () {
-            //     Navigator.of(context).pop();
-            //     Navigator.push(context,
-            //         MaterialPageRoute(builder: (context) => ContactScreen()));
-            //   },
-            //   child: ListTile(
-            //     leading: Icon(
-            //       CupertinoIcons.phone,
-            //       color: Colors.white,
-            //     ),
-            //     horizontalTitleGap: 1.0,
-            //     title: Text(
-            //       'Contact & helpline',
-            //       textScaleFactor: 1.1,
-            //       style: TextStyle(
-            //         fontWeight: FontWeight.w600,
-            //         letterSpacing: 0.5,
-            //         color: Colors.white,
-            //       ),
-            //     ),
-            //   ),
-            // ),
-
             InkWell(
               onTap: () => UrlLauncher.launchInBrowser(toLaunch),
               child: ListTile(

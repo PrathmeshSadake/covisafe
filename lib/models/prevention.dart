@@ -42,7 +42,7 @@ class Prevention {
       description:
           'Call your doctor if you have any symptoms. Stay home until you recover. Avoid sitting, sleeping, or eating with your loved ones even if you live in the same home. Wear a mask and wash your hands as much as possible. If you need urgent medical care, wear a mask and let them know you may have COVID-19.',
     ));
-    print(preventionData.length);
+
     return preventionData;
   }
 }

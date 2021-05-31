@@ -35,7 +35,6 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
   }
 
   _setInput(value) {
-    searchCountryCovidData = [];
     setState(() {
       searchCountryCovidData = [];
       searchField = value;
@@ -53,7 +52,6 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

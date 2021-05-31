@@ -59,36 +59,37 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: isLoading
-            ? Center(
-                child: CircularProgressIndicator(),
-              )
-            : SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.all(14),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Total cases in India: ${formatter.format(total)}',
-                        style: Styles.title,
+      body: isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.all(14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Total cases in India: ${formatter.format(total)}',
+                      style: Styles.title,
+                    ),
+                    Container(
+                      child: HomeScreenPieChart(
+                        seriesList: _createSampleData(),
+                        animate: true,
                       ),
-                      Container(
-                        child: HomeScreenPieChart(
-                          seriesList: _createSampleData(),
-                          animate: true,
-                        ),
-                      ),
-                      LegendsContainer(
-                        covidSummary: covidSummary,
-                      ),
-                      PreventionData(
-                        preventionData: preventionData,
-                      )
-                    ],
-                  ),
+                    ),
+                    LegendsContainer(
+                      covidSummary: covidSummary,
+                    ),
+                    PreventionData(
+                      preventionData: preventionData,
+                    )
+                  ],
                 ),
-              ));
+              ),
+            ),
+    );
   }
 
   List<charts.Series<PieStats, String>> _createSampleData() {

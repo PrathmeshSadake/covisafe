@@ -27,7 +27,7 @@ class Summary {
     if (response.statusCode == 200) {
       final decodedData = convert.jsonDecode(response.body);
       final summaryData = decodedData['data']['summary'];
-      print(summaryData);
+
       Summary covidSummary = Summary(
         total: summaryData['total'],
         confirmedCasesIndian: summaryData['confirmedCasesIndian'],

@@ -1,7 +1,9 @@
-import 'package:covisafe/models/summary.dart';
 import 'package:flutter/material.dart';
 
-import 'legend.dart';
+// Widgets
+import './legend.dart';
+// Models
+import '../models/summary.dart';
 
 class LegendsContainer extends StatelessWidget {
   final Summary covidSummary;
